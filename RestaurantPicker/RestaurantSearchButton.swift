@@ -9,6 +9,10 @@ import SwiftUI
 import MapKit
 
 struct RestaurantSearchButton: View {
+    
+    @Binding var searchResults: [MKMapItem]
+    
+    var visibleRegion: MKCoordinateRegion?
 
     var body: some View {
         HStack {
@@ -22,7 +26,7 @@ struct RestaurantSearchButton: View {
         .labelStyle(.iconOnly)
     }
 
-    @Binding var searchResults: [MKMapItem]
+
     
     var mycenter = CLLocationCoordinate2D(latitude: 39.7392, longitude: -104.9903)
 
@@ -30,7 +34,7 @@ struct RestaurantSearchButton: View {
         let request = MKLocalSearch.Request()
         request.naturalLanguageQuery = query
         request.resultTypes = .pointOfInterest
-        request.region = MKCoordinateRegion(
+        request.region = visibleRegion ?? MKCoordinateRegion(
             center: .defaultLoc,
             span: MKCoordinateSpan(latitudeDelta: 0.0125, longitudeDelta: 0.0125))
             
