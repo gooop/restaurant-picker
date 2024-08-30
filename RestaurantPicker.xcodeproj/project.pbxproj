@@ -15,6 +15,7 @@
 		07DA76382C1FBD1E007C69C8 /* RestaurantPickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DA76372C1FBD1E007C69C8 /* RestaurantPickerTests.swift */; };
 		07DA76422C1FBD1E007C69C8 /* RestaurantPickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DA76412C1FBD1E007C69C8 /* RestaurantPickerUITests.swift */; };
 		07DA76442C1FBD1E007C69C8 /* RestaurantPickerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DA76432C1FBD1E007C69C8 /* RestaurantPickerUITestsLaunchTests.swift */; };
+		07DC28BF2C81574300632C25 /* RestaurantSearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DC28BE2C81574300632C25 /* RestaurantSearchButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		07DA763D2C1FBD1E007C69C8 /* RestaurantPickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RestaurantPickerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07DA76412C1FBD1E007C69C8 /* RestaurantPickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantPickerUITests.swift; sourceTree = "<group>"; };
 		07DA76432C1FBD1E007C69C8 /* RestaurantPickerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantPickerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		07DC28BE2C81574300632C25 /* RestaurantSearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantSearchButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				07DA76242C1FBD1D007C69C8 /* RestaurantPickerApp.swift */,
 				07DA76262C1FBD1D007C69C8 /* MainView.swift */,
 				07DA76282C1FBD1D007C69C8 /* Item.swift */,
+				07DC28BE2C81574300632C25 /* RestaurantSearchButton.swift */,
 				07DA762A2C1FBD1E007C69C8 /* Assets.xcassets */,
 				07DA762C2C1FBD1E007C69C8 /* Preview Content */,
 			);
@@ -262,6 +265,7 @@
 			files = (
 				07DA76272C1FBD1D007C69C8 /* MainView.swift in Sources */,
 				07DA76292C1FBD1D007C69C8 /* Item.swift in Sources */,
+				07DC28BF2C81574300632C25 /* RestaurantSearchButton.swift in Sources */,
 				07DA76252C1FBD1D007C69C8 /* RestaurantPickerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,6 +433,7 @@
 				DEVELOPMENT_TEAM = S76FF4PW5J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We would like your location to locate restaurants around you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -458,6 +463,7 @@
 				DEVELOPMENT_TEAM = S76FF4PW5J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We would like your location to locate restaurants around you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
