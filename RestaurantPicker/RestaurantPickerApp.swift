@@ -7,9 +7,14 @@
 
 import SwiftUI
 import SwiftData
+import CoreLocation
 
 @main
 struct RestaurantPickerApp: App {
+    // Location permissions management
+    @StateObject private var locationManager = LocationManager()
+    
+    // Shared model container initialization
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
@@ -26,7 +31,23 @@ struct RestaurantPickerApp: App {
     var body: some Scene {
         WindowGroup {
             MainView()
+                .environmentObject(locationManager)
         }
         .modelContainer(sharedModelContainer)
+    }
+}
+
+/// Location manager class for permissions check
+class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
+    private let locationManager = CLLocationManager()
+    @Published var authorizationStatus: CLAuthorizationStatus?
+    
+    override init() {
+        super.init()
+        locationManager.delegate = self
+    }
+    
+    func requestLocationPermission() {
+        locationManager.requestWhenInUseAuthorization()
     }
 }
