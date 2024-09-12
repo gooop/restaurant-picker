@@ -28,6 +28,10 @@ struct MainView: View {
     
     // Map item vars
     @State private var searchResults: [MKMapItem] = []
+    
+    // Vars for restaurant picking
+    @State private var currentStreak: Int = 0
+    @State private var longestStreak: (MKMapItem, Int)? = nil // Restaurant that lasted the longest
 
     // View body
     var body: some View {
@@ -41,11 +45,39 @@ struct MainView: View {
             }
             .mapStyle(.standard(elevation: .realistic))
             .safeAreaInset(edge: .bottom) {
-                HStack {
-                    Spacer()
-                    RestaurantSearchButton(searchResults: $searchResults, visibleRegion: visibleRegion)
-                        .padding(.top)
-                    Spacer()
+                VStack {
+                    HStack {
+                        Spacer()
+                        RestaurantSearchButton(searchResults: $searchResults, visibleRegion: visibleRegion)
+                            .padding(.top)
+                        Spacer()
+                    }
+                    HStack {
+                        if searchResults != [] && searchResults.count > 1 {
+                            Spacer()
+                            Button(action: {
+                                popOtherRestaurant(index: 1, list: &searchResults)
+                            }) {
+                                Text(searchResults[0].name ?? "Unknown")
+                                    .padding()
+                                    .background(Color.blue)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(10)
+                            }
+                            Spacer()
+                            Spacer()
+                            Button(action: {
+                                popOtherRestaurant(index: 0, list: &searchResults)
+                            }) {
+                                Text(searchResults[1].name ?? "Unknown")
+                                    .padding()
+                                    .background(Color.blue)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(10)
+                            }
+                            Spacer()
+                        }
+                    }
                 }
                 .background(.thinMaterial)
             }
@@ -62,6 +94,14 @@ struct MainView: View {
                 checkAndRequestLocationPermission()
             }
         }
+    }
+    
+    /// Helper to remove the restaurant  that was not selected from the list
+    private func popOtherRestaurant(index: Int, list: inout [MKMapItem]) {
+        guard list.count > 1 else { return }
+        
+        // Remove the non-selected restaurant
+        list.remove(at: index == 0 ? 0 : 1)
     }
     
     /// Helper for requesting location permission
