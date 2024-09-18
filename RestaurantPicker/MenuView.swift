@@ -10,10 +10,19 @@ import Foundation
 import MapKit
 
 struct MenuView: View {
+    var menuList = [
+        Menu(label: "Latin Food"),
+        Menu(label: "Pizza Places"),
+        Menu(label: "Everything"),
+    ]
     // View body
     var body: some View {
         VStack {
-            
+            List {
+                ForEach(menuList) { menu in
+                    Text(menu.label)
+                }
+            }
         }
     }
     

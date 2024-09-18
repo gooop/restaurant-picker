@@ -16,6 +16,7 @@ struct SearchView: View {
     
     // Map item vars
     @State private var searchResults: [MKMapItem] = []
+    @State private var selectedMark: MKMapItem?
     
     // Vars for restaurant picking
     @State private var currentStreak: Int = 0
@@ -24,12 +25,17 @@ struct SearchView: View {
     // View body
     var body: some View {
         VStack {
-            Map(position: $position) {
+            Map(position: $position, selection: $selectedMark) {
                 ForEach(searchResults, id: \.self) { result in
                     Marker(item: result)
+                        .tag(result)
                 }
                 
                 UserAnnotation()
+            }
+            .mapControls{
+                MapUserLocationButton()
+                MapCompass()
             }
             .mapStyle(.standard(elevation: .realistic))
             .safeAreaInset(edge: .bottom) {
