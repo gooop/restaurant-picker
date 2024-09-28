@@ -55,16 +55,20 @@ struct SearchView: View {
                             restaurant: searchResults[0],
                             action: {popOtherRestaurant(index: 1, list: &searchResults)}
                         )
-                        .background(.thinMaterial)
                         .padding(.all)
+                        .background(.thinMaterial)
+                        .cornerRadius(10)
+                        .padding(.bottom)
                         Spacer()
                         Spacer()
                         RestaurantButton(
                             restaurant: searchResults[1],
                             action: {popOtherRestaurant(index: 0, list: &searchResults)}
                         )
-                        .background(.thinMaterial)
                         .padding(.all)
+                        .background(.thinMaterial)
+                        .cornerRadius(10)
+                        .padding(.bottom)
                         Spacer()
                     }
                     else {
