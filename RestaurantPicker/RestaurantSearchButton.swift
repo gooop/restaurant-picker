@@ -22,6 +22,7 @@ struct RestaurantSearchButton: View {
                 Label("Restaurants", systemImage: "fork.knife.circle.fill")
             }
             .buttonStyle(.borderedProminent)
+            .controlSize(.large)
         }
         .labelStyle(.iconOnly)
     }

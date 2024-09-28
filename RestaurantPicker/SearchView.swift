@@ -24,13 +24,12 @@ struct SearchView: View {
     
     // View body
     var body: some View {
-        VStack {
+        ZStack {
             Map(position: $position, selection: $selectedMark) {
                 ForEach(searchResults, id: \.self) { result in
                     Marker(item: result)
                         .tag(result)
                 }
-                
                 UserAnnotation()
             }
             .mapControls{
@@ -38,51 +37,43 @@ struct SearchView: View {
                 MapCompass()
             }
             .mapStyle(.standard(elevation: .realistic))
-            .safeAreaInset(edge: .bottom) {
-                VStack {
-                    HStack {
-                        Spacer()
-                        RestaurantSearchButton(searchResults: $searchResults, visibleRegion: visibleRegion)
-                            .padding(.top)
-                        Spacer()
-                    }
-                    HStack {
-                        if searchResults != [] && searchResults.count > 1 {
-                            Spacer()
-                            Button(action: {
-                                popOtherRestaurant(index: 1, list: &searchResults)
-                            }) {
-                                Text(searchResults[0].name ?? "Unknown")
-                                    .padding()
-                                    .background(Color.blue)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(10)
-                            }
-                            Spacer()
-                            Spacer()
-                            Button(action: {
-                                popOtherRestaurant(index: 0, list: &searchResults)
-                            }) {
-                                Text(searchResults[1].name ?? "Unknown")
-                                    .padding()
-                                    .background(Color.blue)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(10)
-                            }
-                            Spacer()
-                        }
-                    }
-                }
-                .background(.thinMaterial)
-            }
             .onChange(of: searchResults) {
                 position = .automatic
             }
             .onMapCameraChange { context in
                 visibleRegion = context.region
             }
+            .overlay(alignment: .bottomTrailing) {
+                RestaurantSearchButton(searchResults: $searchResults, visibleRegion: visibleRegion)
+                    .padding(.all)
+            }
+            .safeAreaInset(edge: .bottom) {
+                HStack {
+                    if searchResults != [] && searchResults.count > 1 {
+                        Spacer()
+                        RestaurantButton(
+                            restaurant: searchResults[0],
+                            action: {popOtherRestaurant(index: 1, list: &searchResults)}
+                        )
+                        .background(.thinMaterial)
+                        .padding(.all)
+                        Spacer()
+                        Spacer()
+                        RestaurantButton(
+                            restaurant: searchResults[1],
+                            action: {popOtherRestaurant(index: 0, list: &searchResults)}
+                        )
+                        .background(.thinMaterial)
+                        .padding(.all)
+                        Spacer()
+                    }
+                    else {
+                        // HStack is empty
+                    }
+                }
+            }
         }
-        }
+    }
     
         /// Helper to remove the restaurant  that was not selected from the list
         private func popOtherRestaurant(index: Int, list: inout [MKMapItem]) {
