@@ -6,23 +6,21 @@
 //
 
 import SwiftUI
-import Foundation
+import SwiftData
 import MapKit
 
 struct MenuView: View {
-    var menuList = [
-        Menu(label: "Latin Food"),
-        Menu(label: "Pizza Places"),
-        Menu(label: "Everything"),
-    ]
+    @Query var menus: [Menu]
+    
     // View body
     var body: some View {
-        VStack {
+        NavigationStack {
             List {
-                ForEach(menuList) { menu in
+                ForEach(menus) { menu in
                     Text(menu.label)
                 }
             }
+            .navigationTitle("Menus")
         }
     }
     

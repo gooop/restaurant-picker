@@ -7,12 +7,16 @@
 
 import Foundation
 import SwiftData
+import MapKit
 
 @Model
 final class Menu {
     var label: String
+    //var place: MKMapItem
+    var rating: Int
     
-    init(label: String) {
+    init(label: String, rating: Int = 0) {
         self.label = label
+        self.rating = rating
     }
 }
