@@ -17,6 +17,8 @@ struct MainView: View {
     // Setup vars
     @EnvironmentObject var locationManager: LocationManager
     @Environment(\.modelContext) private var modelContext
+    @State private var viewSelection: Int = 1 // Default is search view
+    
     // Code to prevent preview crashing
     var isPreview: Bool {
         return ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1"
@@ -24,17 +26,24 @@ struct MainView: View {
     
     // View body
     var body: some View {
-        TabView() {
+        TabView(selection: $viewSelection) {
             MenuView()
                 .tabItem {
-                    Label("Menu", systemImage: "book.circle.fill")
+                    Label("Placeholder", systemImage: "pencil.circle.fill")
                 }
+                .tag(0)
             
             SearchView()
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass.circle.fill")
                 }
+                .tag(1)
 
+            MenuView()
+                .tabItem {
+                    Label("Menus", systemImage: "book.circle.fill")
+                }
+                .tag(2)
         }
 
     }
