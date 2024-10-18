@@ -15,7 +15,7 @@ final class Menu {
     //var place: MKMapItem
     var rating: Int
     
-    init(label: String, rating: Int = 0) {
+    init(label: String = "", rating: Int = 0) {
         self.label = label
         self.rating = rating
     }
