@@ -8,9 +8,8 @@ on:
 
 jobs:
   build:
-    name: Build and Test default scheme using any available iPhone simulator
+    name: Build, analyze, and test using the iPhone 16 Pro Max simulator
     runs-on: macos-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
