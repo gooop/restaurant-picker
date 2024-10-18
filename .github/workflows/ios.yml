@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Build, analyze, and test using the iPhone 16 Pro Max simulator
+    name: Build, analyze, and test using the iPhone 16 Pro Max simulator.
     runs-on: macos-latest, self-hosted
     steps:
       - name: Checkout
