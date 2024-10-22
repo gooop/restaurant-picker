@@ -90,10 +90,10 @@
 		07AA89B92CC76B9F00362B0C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				07AA89BE2CC76BF400362B0C /* AddRestaurantView.swift */,
 				07DA76262C1FBD1D007C69C8 /* MainView.swift */,
 				079F2E032C93B3C5009D1FC3 /* SearchView.swift */,
 				079F2E012C93B384009D1FC3 /* MenuView.swift */,
+				07AA89BE2CC76BF400362B0C /* AddRestaurantView.swift */,
 				07C8B7602CAA459500E2E9AB /* EditMenuView.swift */,
 			);
 			path = Views;

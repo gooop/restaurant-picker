@@ -10,6 +10,8 @@ import Foundation
 import MapKit
 
 struct SearchView: View {
+    @EnvironmentObject var locationManager: LocationManager
+    
     // Map position vars
     @State private var position: MapCameraPosition = .userLocation(fallback: .automatic)
     @State private var visibleRegion: MKCoordinateRegion?
@@ -46,6 +48,7 @@ struct SearchView: View {
             .overlay(alignment: .bottomTrailing) {
                 RestaurantSearchButton(searchResults: $searchResults, visibleRegion: visibleRegion)
                     .padding(.all)
+                    .environmentObject(locationManager)
             }
             .safeAreaInset(edge: .bottom) {
                 HStack {

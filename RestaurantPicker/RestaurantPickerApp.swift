@@ -13,8 +13,6 @@ import CoreLocation
 struct RestaurantPickerApp: App {
     // Location permissions management
     @StateObject private var locationManager = LocationManager()
-    
-
 
     var body: some Scene {
         WindowGroup {

@@ -38,6 +38,7 @@ struct MainView: View {
                     Label("Search", systemImage: "magnifyingglass.circle.fill")
                 }
                 .tag(1)
+                .environmentObject(locationManager)
 
             MenuView()
                 .tabItem {

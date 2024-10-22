@@ -9,6 +9,7 @@ import SwiftUI
 import MapKit
 
 struct RestaurantSearchButton: View {
+    @EnvironmentObject var locationManager: LocationManager
     
     @Binding var searchResults: [MKMapItem]
     
@@ -17,6 +18,8 @@ struct RestaurantSearchButton: View {
     var body: some View {
         HStack {
             Button {
+                //TODO: Wait for user to give or deny permission, and zoom in if give
+                locationManager.requestLocationPermission()
                 Task {
                     await searchResults = Common.search(for: "restaurant", visibleRegion: visibleRegion)
                 }
