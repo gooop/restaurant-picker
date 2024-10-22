@@ -39,6 +39,8 @@ struct MenuView: View {
         let menu = Menu()
         modelContext.insert(menu)
         newMenus = [menu]
+        
+        //Common.search(menu.label)
     }
     
     /// Delete menu helper function

@@ -15,14 +15,18 @@ struct EditMenuView: View {
         Form {
             TextField("Name", text: $menu.label)
             
-            Section("Rating") {
-                Picker("Rating", selection: $menu.rating) {
-                    Text("⭐").tag(1)
-                    Text("⭐⭐").tag(2)
-                    Text("⭐⭐⭐").tag(3)
-                    Text("⭐⭐⭐⭐").tag(4)
-                    Text("⭐⭐⭐⭐⭐").tag(5)
+            Section("Restaurants") {
+                
+                List (menu.places, id: \.self) { place in
+                        Text(place.name ?? "Unknown Place")
                 }
+            }
+            
+            Button{
+                
+            }
+            label: {
+                Text("Add Restaurant")
             }
         }
         .navigationTitle("Edit Menu")
@@ -35,7 +39,7 @@ struct EditMenuView: View {
     do {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: Menu.self, configurations: config)
-        let example = Menu(label: "example", rating: 1)
+        let example = Menu(label: "example")
         return EditMenuView(menu: example)
             .modelContainer(container)
     } catch {

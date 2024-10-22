@@ -17,7 +17,9 @@ struct RestaurantSearchButton: View {
     var body: some View {
         HStack {
             Button {
-                search(for: "restaurant")
+                Task {
+                    await searchResults = Common.search(for: "restaurant", visibleRegion: visibleRegion)
+                }
             } label: {
                 Label("Restaurants", systemImage: "fork.knife.circle.fill")
             }
@@ -30,20 +32,5 @@ struct RestaurantSearchButton: View {
 
     
     var mycenter = CLLocationCoordinate2D(latitude: 39.7392, longitude: -104.9903)
-
-    func search(for query: String) {
-        let request = MKLocalSearch.Request()
-        request.naturalLanguageQuery = query
-        request.resultTypes = .pointOfInterest
-        request.region = visibleRegion ?? MKCoordinateRegion(
-            center: .defaultLoc,
-            span: MKCoordinateSpan(latitudeDelta: 0.0125, longitudeDelta: 0.0125))
-            
-        Task {
-            let search = MKLocalSearch(request: request)
-            let response = try? await search.start()
-            searchResults = response?.mapItems ?? []
-        }
-    }
         
 }
