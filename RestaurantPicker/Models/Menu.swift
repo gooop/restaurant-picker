@@ -27,12 +27,19 @@ final class Menu {
                 return MKMapItem(placemark: placemark)
             }
         }
+        set (mapItems) {
+            for mapItem in mapItems {
+                placeNames.append(mapItem.placemark.name ?? "Unknown Place")
+                latitudes.append(mapItem.placemark.coordinate.latitude)
+                longitudes.append(mapItem.placemark.coordinate.longitude)
+            }
+        }
     }
         
     init(label: String = "",
-         placeNames: [String] = [],
-         latitudes: [Double] = [],
-         longitudes: [Double] = []) {
+         placeNames: [String] = ["hello"],
+         latitudes: [Double] = [0.0],
+         longitudes: [Double] = [0.0]) {
         self.label = label
         self.placeNames = placeNames
         self.latitudes = latitudes

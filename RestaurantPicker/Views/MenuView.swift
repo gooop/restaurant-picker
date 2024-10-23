@@ -27,7 +27,11 @@ struct MenuView: View {
                 .onDelete(perform: deleteMenu)
             }
             .navigationTitle("Menus")
-            .navigationDestination(for: Menu.self, destination: EditMenuView.init)
+            .navigationDestination(for: Menu.self) { menu in
+                EditMenuView(
+                    menu: menu
+                )
+            }
             .toolbar {
                 Button("Add Menu", systemImage: "plus", action: addMenu)
             }
