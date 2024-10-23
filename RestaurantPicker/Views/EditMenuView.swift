@@ -25,7 +25,13 @@ struct EditMenuView: View {
                         .foregroundColor(Color.accentColor)
                 })
             List (menu.places, id: \.self) { place in
-                Text(place.name ?? "Unknown Place")
+                NavigationLink(destination: {
+                    RestaurantView(
+                        restaurant: place
+                    )
+                    }, label: {
+                        Text(place.name ?? "Unknown Place")
+                    })
             }
             }
             

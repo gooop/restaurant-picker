@@ -12,6 +12,7 @@
 		079F2E062C9A9532009D1FC3 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079F2E052C9A9532009D1FC3 /* Menu.swift */; };
 		07AA89B82CC7590A00362B0C /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA89B72CC7590800362B0C /* Common.swift */; };
 		07AA89BF2CC76BFA00362B0C /* AddRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA89BE2CC76BF400362B0C /* AddRestaurantView.swift */; };
+		07AA89C12CC875A000362B0C /* RestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA89C02CC8759C00362B0C /* RestaurantView.swift */; };
 		07C8B75F2CA792E500E2E9AB /* RestaurantButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C8B75E2CA792DC00E2E9AB /* RestaurantButton.swift */; };
 		07C8B7612CAA459500E2E9AB /* EditMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C8B7602CAA459500E2E9AB /* EditMenuView.swift */; };
 		07DA76252C1FBD1D007C69C8 /* RestaurantPickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DA76242C1FBD1D007C69C8 /* RestaurantPickerApp.swift */; };
@@ -47,6 +48,7 @@
 		079F2E052C9A9532009D1FC3 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		07AA89B72CC7590800362B0C /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		07AA89BE2CC76BF400362B0C /* AddRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRestaurantView.swift; sourceTree = "<group>"; };
+		07AA89C02CC8759C00362B0C /* RestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantView.swift; sourceTree = "<group>"; };
 		07C8B75E2CA792DC00E2E9AB /* RestaurantButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantButton.swift; sourceTree = "<group>"; };
 		07C8B7602CAA459500E2E9AB /* EditMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMenuView.swift; sourceTree = "<group>"; };
 		07DA76212C1FBD1D007C69C8 /* Chooz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chooz.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +92,7 @@
 		07AA89B92CC76B9F00362B0C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				07AA89C02CC8759C00362B0C /* RestaurantView.swift */,
 				07DA76262C1FBD1D007C69C8 /* MainView.swift */,
 				079F2E032C93B3C5009D1FC3 /* SearchView.swift */,
 				079F2E012C93B384009D1FC3 /* MenuView.swift */,
@@ -307,6 +310,7 @@
 			files = (
 				079F2E022C93B384009D1FC3 /* MenuView.swift in Sources */,
 				07DA76272C1FBD1D007C69C8 /* MainView.swift in Sources */,
+				07AA89C12CC875A000362B0C /* RestaurantView.swift in Sources */,
 				07C8B7612CAA459500E2E9AB /* EditMenuView.swift in Sources */,
 				07AA89BF2CC76BFA00362B0C /* AddRestaurantView.swift in Sources */,
 				079F2E062C9A9532009D1FC3 /* Menu.swift in Sources */,
