@@ -12,24 +12,44 @@ struct AddRestaurantView: View {
     @Bindable var menu: Menu
     @State private var position: MapCameraPosition = .userLocation(fallback: .automatic)
     
+    // Search properties for adding restaurants to places list
+    @State var searchText: String
+    @State var selectedRestaurant: MKMapItem?
+    @State var searchResults: [MKMapItem]?
+    
     var body: some View {
-        Form {
-            TextField("Name", text: $menu.label) // TODO: Fancy live querying here. https://stackoverflow.com/questions/35629285/how-to-create-autocomplete-text-field-in-swift/43306951#43306951
-            
-            // Put map with location here
+        VStack {
+            //TODO: Make search suggestions small overlay on top of map instead of blocking map https://www.youtube.com/watch?v=e0eO1di0cPY
+            // Maybe a ZStack??
+            //TODO: Make map smaller, and show restaurant details below it.
             Map(position: $position) {
-                
             }
-            
-            Button{
-                
-            }
-            label: {
-                Text("Add Restaurant")
-            }
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), suggestions: {
+                    ForEach(searchResults ?? [], id: \.self) { result in
+                        Button(action: {
+                            searchText = result.name ?? ""
+                            selectedRestaurant = result
+                        }, label: {
+                            Label (result.name ?? "Unknown Place", systemImage: "mappin.and.ellipse.circle.fill")
+                        })
+                    }
+            })
         }
         .navigationTitle("New Restaurant")
         .navigationBarTitleDisplayMode(.inline)
-
+        .onChange(of: searchText) {
+            Task {
+                await searchResults = Common.search(for: searchText)
+                print("awaited search results")
+                print("search results count: \(searchResults?.count ?? 0)")
+                for result in searchResults! {
+                    print("- result: \(result.name ?? "Unknown Place")")
+                }
+            }
+        }
+        .onChange(of: selectedRestaurant) {
+            position = .camera(.init(centerCoordinate: selectedRestaurant!.placemark.coordinate,
+                                     distance: 0))
+        }
     }
 }

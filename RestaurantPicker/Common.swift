@@ -9,7 +9,7 @@ import MapKit
 import SwiftUI
 
 struct Common {
-    public static func search(for query: String, visibleRegion: MKCoordinateRegion?) async -> [MKMapItem] {
+    public static func search(for query: String, visibleRegion: MKCoordinateRegion? = nil) async -> [MKMapItem] {
         let request = MKLocalSearch.Request()
         request.naturalLanguageQuery = query
         request.resultTypes = .pointOfInterest

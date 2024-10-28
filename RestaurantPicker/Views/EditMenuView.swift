@@ -18,7 +18,8 @@ struct EditMenuView: View {
             Section("Restaurants") {
             NavigationLink(destination: {
                 AddRestaurantView(
-                    menu: menu
+                    menu: menu,
+                    searchText: ""
                 )
                 }, label: {
                     Text("Add Restaurant")
