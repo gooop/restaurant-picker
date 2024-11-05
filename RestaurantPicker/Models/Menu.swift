@@ -21,10 +21,15 @@ final class Menu {
     // Computed property to generate MKMapItem
     var places: [MKMapItem] {
         get {
-            zip(latitudes, longitudes).map { lat, long in
+            zip(placeNames, zip(latitudes, longitudes)).map { name, locZip in
+                let lat = locZip.0
+                let long = locZip.1
                 let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+                let name = name
                 let placemark = MKPlacemark(coordinate: coordinate)
-                return MKMapItem(placemark: placemark)
+                let mapItem = MKMapItem(placemark: placemark)
+                mapItem.name = name
+                return mapItem
             }
         }
         set (mapItems) {
@@ -37,12 +42,26 @@ final class Menu {
     }
         
     init(label: String = "",
-         placeNames: [String] = ["hello"],
-         latitudes: [Double] = [0.0],
-         longitudes: [Double] = [0.0]) {
+         placeNames: [String] = [],
+         latitudes: [Double] = [],
+         longitudes: [Double] = []) {
         self.label = label
         self.placeNames = placeNames
         self.latitudes = latitudes
         self.longitudes = longitudes
+    }
+    
+    public func addPlace(place: MKMapItem) {
+        places.append(place)
+        latitudes.append(place.placemark.coordinate.latitude)
+        longitudes.append(place.placemark.coordinate.longitude)
+        placeNames.append(place.name ?? "Unknown Place")
+    }
+    
+    public func clearPlaces() {
+        placeNames = []
+        latitudes = []
+        longitudes = []
+        places = []
     }
 }

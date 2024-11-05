@@ -19,9 +19,14 @@ struct AddRestaurantView: View {
     
     var body: some View {
         VStack {
+//            Button(action: {
+//                menu.clearPlaces()
+//            }, label: {
+//                Text("DEBUG: Clear places")
+//            })
             //TODO: Make search suggestions small overlay on top of map instead of blocking map https://www.youtube.com/watch?v=e0eO1di0cPY
             // Maybe a ZStack??
-            //TODO: Make map smaller, and show restaurant details below it.
+            //TODO: Make map smaller, and show restaurant details below it.43
             Map(position: $position) {
             }
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), suggestions: {
@@ -29,6 +34,11 @@ struct AddRestaurantView: View {
                         Button(action: {
                             searchText = result.name ?? ""
                             selectedRestaurant = result
+                            if selectedRestaurant != nil {
+                                print("Selected restaurant")
+                                menu.places.append(selectedRestaurant!)
+                                //menu.addPlace(place: selectedRestaurant!)
+                            }
                         }, label: {
                             Label (result.name ?? "Unknown Place", systemImage: "mappin.and.ellipse.circle.fill")
                         })
@@ -43,7 +53,15 @@ struct AddRestaurantView: View {
                 print("awaited search results")
                 print("search results count: \(searchResults?.count ?? 0)")
                 for result in searchResults! {
-                    print("- result: \(result.name ?? "Unknown Place")")
+                    let category = result.pointOfInterestCategory ?? nil
+                    var categoryString = ""
+                    if category == nil {
+                        categoryString = "Unknown Category"
+                    }
+                    else {
+                        categoryString = category!.rawValue
+                    }
+                    print("- result: \(result.name ?? "Unknown Place") \n - - result type: \(categoryString)")
                 }
             }
         }
