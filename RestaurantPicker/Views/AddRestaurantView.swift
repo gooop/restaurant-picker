@@ -36,8 +36,7 @@ struct AddRestaurantView: View {
                             selectedRestaurant = result
                             if selectedRestaurant != nil {
                                 print("Selected restaurant")
-                                menu.places.append(selectedRestaurant!)
-                                //menu.addPlace(place: selectedRestaurant!)
+                                menu.addPlace(place: selectedRestaurant!)
                             }
                         }, label: {
                             Label (result.name ?? "Unknown Place", systemImage: "mappin.and.ellipse.circle.fill")
@@ -50,8 +49,7 @@ struct AddRestaurantView: View {
         .onChange(of: searchText) {
             Task {
                 await searchResults = Common.search(for: searchText)
-                print("awaited search results")
-                print("search results count: \(searchResults?.count ?? 0)")
+                print("** search results count: \(searchResults?.count ?? 0)")
                 for result in searchResults! {
                     let category = result.pointOfInterestCategory ?? nil
                     var categoryString = ""

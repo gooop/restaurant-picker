@@ -52,7 +52,6 @@ final class Menu {
     }
     
     public func addPlace(place: MKMapItem) {
-        places.append(place)
         latitudes.append(place.placemark.coordinate.latitude)
         longitudes.append(place.placemark.coordinate.longitude)
         placeNames.append(place.name ?? "Unknown Place")
