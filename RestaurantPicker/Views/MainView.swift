@@ -27,12 +27,6 @@ struct MainView: View {
     // View body
     var body: some View {
         TabView(selection: $viewSelection) {
-            MenuView()
-                .tabItem {
-                    Label("Placeholder", systemImage: "pencil.circle.fill")
-                }
-                .tag(0)
-            
             SearchView()
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass.circle.fill")
@@ -46,7 +40,6 @@ struct MainView: View {
                 }
                 .tag(2)
         }
-
     }
     
     /// Helper for requesting location permission
