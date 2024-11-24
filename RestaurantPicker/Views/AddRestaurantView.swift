@@ -48,7 +48,7 @@ struct AddRestaurantView: View {
         .navigationBarTitleDisplayMode(.inline)
         .onChange(of: searchText) {
             Task {
-                await searchResults = Common.search(for: searchText)
+                await searchResults = Common.searchAsync(for: searchText)
                 print("** search results count: \(searchResults?.count ?? 0)")
                 for result in searchResults! {
                     let category = result.pointOfInterestCategory ?? nil

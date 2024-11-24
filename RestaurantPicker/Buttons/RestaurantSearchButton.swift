@@ -21,7 +21,7 @@ struct RestaurantSearchButton: View {
                 //TODO: Wait for user to give or deny permission, and zoom in if give
                 locationManager.requestLocationPermission()
                 Task {
-                    await searchResults = Common.search(for: "restaurant", visibleRegion: visibleRegion)
+                    await searchResults = Common.searchAsync(for: "restaurant", visibleRegion: visibleRegion)
                 }
             } label: {
                 Label("Restaurants", systemImage: "fork.knife.circle.fill")

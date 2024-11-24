@@ -1,0 +1,24 @@
+{
+  "originHash" : "bab0620c92be336f47ea7903f57d810777cb55025e90d113e4f68e83d84f7d42",
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "revision" : "e16d3481f5ed35f0472cb93350085853d754913f",
+        "version" : "5.10.1"
+      }
+    },
+    {
+      "identity" : "cdyelpfusionkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/chrisdhaan/CDYelpFusionKit",
+      "state" : {
+        "revision" : "4a7c2ceaffd602db9899f8c6b98da6b83f1d1157",
+        "version" : "3.2.0"
+      }
+    }
+  ],
+  "version" : 3
+}

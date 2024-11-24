@@ -16,6 +16,7 @@ extension CLLocationCoordinate2D {
 struct MainView: View {
     // Setup vars
     @EnvironmentObject var locationManager: LocationManager
+    @EnvironmentObject var backendManager: BackendManager
     @Environment(\.modelContext) private var modelContext
     @State private var viewSelection: Int = 1 // Default is search view
     
@@ -27,6 +28,12 @@ struct MainView: View {
     // View body
     var body: some View {
         TabView(selection: $viewSelection) {
+            FavoritesView()
+                .tabItem {
+                    Label("Favorites", systemImage: "star.circle.fill")
+                }
+                .tag(0)
+            
             SearchView()
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass.circle.fill")

@@ -13,6 +13,8 @@
 		07AA89B82CC7590A00362B0C /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA89B72CC7590800362B0C /* Common.swift */; };
 		07AA89BF2CC76BFA00362B0C /* AddRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA89BE2CC76BF400362B0C /* AddRestaurantView.swift */; };
 		07AA89C12CC875A000362B0C /* RestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA89C02CC8759C00362B0C /* RestaurantView.swift */; };
+		07AA89C52CEEB97900362B0C /* CDYelpFusionKit in Frameworks */ = {isa = PBXBuildFile; productRef = 07AA89C42CEEB97900362B0C /* CDYelpFusionKit */; };
+		07AA89C72CEEB9EE00362B0C /* Yelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA89C62CEEB9EE00362B0C /* Yelp.swift */; };
 		07C8B75F2CA792E500E2E9AB /* RestaurantButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C8B75E2CA792DC00E2E9AB /* RestaurantButton.swift */; };
 		07C8B7612CAA459500E2E9AB /* EditMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C8B7602CAA459500E2E9AB /* EditMenuView.swift */; };
 		07DA76252C1FBD1D007C69C8 /* RestaurantPickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DA76242C1FBD1D007C69C8 /* RestaurantPickerApp.swift */; };
@@ -23,6 +25,8 @@
 		07DA76422C1FBD1E007C69C8 /* RestaurantPickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DA76412C1FBD1E007C69C8 /* RestaurantPickerUITests.swift */; };
 		07DA76442C1FBD1E007C69C8 /* RestaurantPickerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DA76432C1FBD1E007C69C8 /* RestaurantPickerUITestsLaunchTests.swift */; };
 		07DC28BF2C81574300632C25 /* RestaurantSearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DC28BE2C81574300632C25 /* RestaurantSearchButton.swift */; };
+		07FE13D42CF1B1890035EF43 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FE13D32CF1B17D0035EF43 /* FavoritesView.swift */; };
+		07FE13D82CF25B320035EF43 /* BackendData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FE13D72CF25B2F0035EF43 /* BackendData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,7 @@
 		07AA89B72CC7590800362B0C /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		07AA89BE2CC76BF400362B0C /* AddRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRestaurantView.swift; sourceTree = "<group>"; };
 		07AA89C02CC8759C00362B0C /* RestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantView.swift; sourceTree = "<group>"; };
+		07AA89C62CEEB9EE00362B0C /* Yelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yelp.swift; sourceTree = "<group>"; };
 		07C8B75E2CA792DC00E2E9AB /* RestaurantButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantButton.swift; sourceTree = "<group>"; };
 		07C8B7602CAA459500E2E9AB /* EditMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMenuView.swift; sourceTree = "<group>"; };
 		07DA76212C1FBD1D007C69C8 /* Chooz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chooz.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +67,8 @@
 		07DA76412C1FBD1E007C69C8 /* RestaurantPickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantPickerUITests.swift; sourceTree = "<group>"; };
 		07DA76432C1FBD1E007C69C8 /* RestaurantPickerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantPickerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		07DC28BE2C81574300632C25 /* RestaurantSearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantSearchButton.swift; sourceTree = "<group>"; };
+		07FE13D32CF1B17D0035EF43 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		07FE13D72CF25B2F0035EF43 /* BackendData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07AA89C52CEEB97900362B0C /* CDYelpFusionKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +100,7 @@
 		07AA89B92CC76B9F00362B0C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				07FE13D32CF1B17D0035EF43 /* FavoritesView.swift */,
 				07AA89C02CC8759C00362B0C /* RestaurantView.swift */,
 				07DA76262C1FBD1D007C69C8 /* MainView.swift */,
 				079F2E032C93B3C5009D1FC3 /* SearchView.swift */,
@@ -114,6 +123,7 @@
 		07AA89BB2CC76BC400362B0C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				07FE13D72CF25B2F0035EF43 /* BackendData.swift */,
 				079F2E052C9A9532009D1FC3 /* Menu.swift */,
 			);
 			path = Models;
@@ -144,6 +154,7 @@
 			children = (
 				07DA76242C1FBD1D007C69C8 /* RestaurantPickerApp.swift */,
 				07AA89B72CC7590800362B0C /* Common.swift */,
+				07AA89C62CEEB9EE00362B0C /* Yelp.swift */,
 				07AA89BA2CC76BAB00362B0C /* Buttons */,
 				07AA89B92CC76B9F00362B0C /* Views */,
 				07AA89BB2CC76BC400362B0C /* Models */,
@@ -266,6 +277,9 @@
 				Base,
 			);
 			mainGroup = 07DA76182C1FBD1D007C69C8;
+			packageReferences = (
+				07AA89C32CEEB97900362B0C /* XCRemoteSwiftPackageReference "CDYelpFusionKit" */,
+			);
 			productRefGroup = 07DA76222C1FBD1D007C69C8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -310,7 +324,9 @@
 			files = (
 				079F2E022C93B384009D1FC3 /* MenuView.swift in Sources */,
 				07DA76272C1FBD1D007C69C8 /* MainView.swift in Sources */,
+				07FE13D42CF1B1890035EF43 /* FavoritesView.swift in Sources */,
 				07AA89C12CC875A000362B0C /* RestaurantView.swift in Sources */,
+				07FE13D82CF25B320035EF43 /* BackendData.swift in Sources */,
 				07C8B7612CAA459500E2E9AB /* EditMenuView.swift in Sources */,
 				07AA89BF2CC76BFA00362B0C /* AddRestaurantView.swift in Sources */,
 				079F2E062C9A9532009D1FC3 /* Menu.swift in Sources */,
@@ -319,6 +335,7 @@
 				07C8B75F2CA792E500E2E9AB /* RestaurantButton.swift in Sources */,
 				07AA89B82CC7590A00362B0C /* Common.swift in Sources */,
 				07DA76252C1FBD1D007C69C8 /* RestaurantPickerApp.swift in Sources */,
+				07AA89C72CEEB9EE00362B0C /* Yelp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,6 +669,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		07AA89C32CEEB97900362B0C /* XCRemoteSwiftPackageReference "CDYelpFusionKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/chrisdhaan/CDYelpFusionKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		07AA89C42CEEB97900362B0C /* CDYelpFusionKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 07AA89C32CEEB97900362B0C /* XCRemoteSwiftPackageReference "CDYelpFusionKit" */;
+			productName = CDYelpFusionKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 07DA76192C1FBD1D007C69C8 /* Project object */;
 }
