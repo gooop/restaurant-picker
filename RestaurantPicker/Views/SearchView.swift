@@ -45,37 +45,37 @@ struct SearchView: View {
             .onMapCameraChange { context in
                 visibleRegion = context.region
             }
-            .overlay(alignment: .bottomTrailing) {
-                RestaurantSearchButton(searchResults: $searchResults, visibleRegion: visibleRegion)
-                    .padding(.all)
-                    .environmentObject(locationManager)
-            }
             .safeAreaInset(edge: .bottom) {
-                HStack {
-                    if searchResults != [] && searchResults.count > 1 {
-                        Spacer()
-                        RestaurantButton(
-                            restaurant: searchResults[0],
-                            action: {popOtherRestaurant(index: 1, list: &searchResults)}
-                        )
-                        .padding(.all)
-                        .background(.thinMaterial)
-                        .cornerRadius(10)
-                        .padding(.bottom)
-                        Spacer()
-                        Spacer()
-                        RestaurantButton(
-                            restaurant: searchResults[1],
-                            action: {popOtherRestaurant(index: 0, list: &searchResults)}
-                        )
-                        .padding(.all)
-                        .background(.thinMaterial)
-                        .cornerRadius(10)
-                        .padding(.bottom)
-                        Spacer()
-                    }
-                    else {
-                        // HStack is empty
+                VStack {
+                    RestaurantSearchButton(searchResults: $searchResults, visibleRegion: visibleRegion)
+                        .padding([.bottom, .leading, .trailing])
+                        .environmentObject(locationManager)
+                    HStack {
+                        if searchResults != [] && searchResults.count > 1 {
+                            Spacer()
+                            RestaurantButton(
+                                restaurant: searchResults[0],
+                                action: {popOtherRestaurant(index: 1, list: &searchResults)}
+                            )
+                            .padding(.all)
+                            .background(.thinMaterial)
+                            .cornerRadius(10)
+                            .padding(.bottom)
+                            Spacer()
+                            Spacer()
+                            RestaurantButton(
+                                restaurant: searchResults[1],
+                                action: {popOtherRestaurant(index: 0, list: &searchResults)}
+                            )
+                            .padding(.all)
+                            .background(.thinMaterial)
+                            .cornerRadius(10)
+                            .padding(.bottom)
+                            Spacer()
+                        }
+                        else {
+                            // HStack is empty
+                        }
                     }
                 }
             }

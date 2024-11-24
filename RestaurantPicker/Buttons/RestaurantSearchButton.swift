@@ -24,12 +24,20 @@ struct RestaurantSearchButton: View {
                     await searchResults = Common.searchAsync(for: "restaurant", visibleRegion: visibleRegion)
                 }
             } label: {
-                Label("Restaurants", systemImage: "fork.knife.circle.fill")
+                Label{
+                    Text("Search")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                } icon: {
+                    Image(systemName: "fork.knife.circle.fill")
+                        .resizable()
+                        .frame(minWidth: 30.0, idealWidth: 35.0, maxWidth: 40.0, minHeight: 30.0, idealHeight: 35.0, maxHeight: 40.0)
+                }
             }
             .buttonStyle(.borderedProminent)
             .controlSize(.large)
         }
-        .labelStyle(.iconOnly)
+        
     }
 
 
