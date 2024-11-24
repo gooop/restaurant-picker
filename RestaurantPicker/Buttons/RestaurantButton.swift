@@ -14,6 +14,10 @@ struct RestaurantButton: View {
     
     var body: some View {
         VStack {
+            Image(systemName: "fork.knife.circle.fill")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                //.frame(minWidth: 30.0, maxWidth: 40.0, minHeight: 30.0, maxHeight: 40.0)
             Button(action: {action()}) {
                 Text(restaurant.name ?? "Unkown Restaurant")
                     .padding()
